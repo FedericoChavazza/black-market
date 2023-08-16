@@ -1,0 +1,12 @@
+.logoutContainer {
+  color: red !important;
+  font-size: 1.3rem !important;
+  border-radius: 0 0 0.5rem 0.5rem !important;
+  height: 3.5rem !important;
+  padding: 0.2rem 2.4rem !important;
+}
+
+.logoutContainer:hover {
+  background-color: red;
+  color: white !important;
+}

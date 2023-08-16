@@ -1,0 +1,29 @@
+.productsContainer {
+  padding-top: 11.1rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  background-color: #f4f7fa;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 8rem;
+}
+
+.spinnerContainer {
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 40rem;
+  align-items: center;
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem;
+  flex-wrap: wrap;
+}

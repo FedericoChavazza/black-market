@@ -1,0 +1,182 @@
+.detailsContainer {
+  width: 90%;
+  height: 77.2rem;
+  background-color: white;
+  z-index: 5;
+  margin: 12.1rem 0 5rem 0;
+  border-radius: 0.8rem;
+  box-shadow: 0px 0px 18px 0px #00000026;
+  padding: 5.5rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 5rem;
+}
+
+.imagesContainer {
+  height: 100%;
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagesContainer img {
+  border-radius: 0.8rem;
+}
+
+.bigImageContainer {
+  position: relative;
+  width: 100%;
+}
+
+.bigImage {
+  width: 100%;
+  height: 47.6rem;
+}
+
+.productInfoContainer {
+  height: 100%;
+  width: 45%;
+}
+
+.littleImagesContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.littleImagesContainer img {
+  width: 33.3%;
+  height: 15.4rem;
+}
+
+.missingImages {
+  width: 33.3%;
+  height: 15.4rem;
+  border-radius: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  color: white;
+  filter: brightness(70%);
+}
+
+.heart {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  height: 35px;
+  width: 35px;
+}
+
+.timesCross {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.productInfoContainer {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.mainDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 30rem;
+}
+
+.mainDetails h1 {
+  margin: 0;
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+.mainDetails .corp {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.mainDetails .price {
+  margin: 0;
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+.productDescriptionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 30rem;
+}
+
+.productDescriptionContainer h2 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.productDescriptionContainer span {
+  font-size: 1.3rem;
+  margin: 0;
+  max-height: 23rem;
+  overflow: auto;
+}
+
+.buttonsContainer,
+.addToCart {
+  height: 6.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.buttonsContainer input {
+  padding: 1rem;
+  text-align: center;
+  box-sizing: border-box;
+  height: 4.3rem;
+}
+
+.addToCart {
+  width: calc(100% - 6rem);
+}
+
+.buttonsContainer label {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.addToCart label {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.userInteractions {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.errorAvailability,
+.errorAvailabilityBox {
+  color: red;
+}
+
+.errorAvailabilityBox {
+  border: 1px solid red;
+}

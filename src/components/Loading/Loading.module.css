@@ -1,0 +1,19 @@
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: column;
+  height: 100vh;
+  animation-duration: 500ms;
+  animation-name: home_transition;
+}
+
+@keyframes home_transition {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

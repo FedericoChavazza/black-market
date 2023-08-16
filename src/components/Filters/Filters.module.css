@@ -1,0 +1,24 @@
+.filterContainer {
+  display: flex;
+  gap: 5rem;
+  flex-direction: column;
+  font-size: 1.4rem;
+}
+
+.filterContainer > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filterContainer div h3 {
+  margin: 0;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.title {
+  font-size: 2.1rem;
+  margin: 0;
+  font-weight: 600;
+}

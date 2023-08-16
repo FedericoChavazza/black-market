@@ -1,0 +1,110 @@
+.cardContainer {
+  width: 26.4rem;
+  height: 37.7rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 18px 0px #00000026;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  z-index: 5;
+}
+
+.upperPart {
+  height: 24.8rem;
+  width: 100%;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.upperPart img {
+  color: transparent;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.lowerPart {
+  height: 12.9rem;
+  background-color: white;
+  width: 100%;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #00000026;
+}
+
+.lowerPart div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.lowerPart h3 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.verticalCard {
+  display: flex;
+  width: 100%;
+  height: 18.2rem;
+  background-color: white;
+  box-shadow: 0px 0px 18px 0px #00000026;
+  border-radius: 0.8rem;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.imageContainer {
+  width: 19.7rem;
+  height: 100%;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.8rem 0 0 0.8rem;
+}
+
+.contentContainer {
+  width: calc(100% - 19.7rem);
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.contentContainer h2 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.contentContainer h2:nth-child(2) {
+  font-weight: 400;
+}
+
+.contentContainer > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 10rem;
+  justify-content: space-between;
+}
+
+.userInteractionProduct {
+  align-items: center;
+}
+
+.productInfo {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}

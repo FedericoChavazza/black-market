@@ -1,0 +1,30 @@
+.inputContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.labelContainer {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+
+.labelContainer div {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.fontSizeLabel,
+.buttonLabelContainer {
+  font-size: 1.6rem;
+}
+
+.buttonLabelContainer {
+  cursor: pointer;
+}
+
+.buttonSearchContainer {
+  width: 8rem;
+}

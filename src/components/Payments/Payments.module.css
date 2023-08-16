@@ -1,0 +1,45 @@
+.paymentsContainer {
+  width: 100%;
+  background-color: white;
+  height: 47.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 7rem;
+  box-sizing: border-box;
+  padding: 9rem;
+  z-index: 5;
+}
+
+.paymentsTitle {
+  font-size: 3.2rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.payments {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.payments div {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.8rem;
+  font-weight: 300;
+  width: 100%;
+  height: 100%;
+}
+
+.payments .borderline {
+  width: 1px;
+  height: 6.3rem;
+  background-color: black;
+}

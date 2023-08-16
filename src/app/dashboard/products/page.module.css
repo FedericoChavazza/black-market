@@ -1,0 +1,78 @@
+.productsContainer {
+  width: calc(100% - 16rem);
+  margin: 12.1rem 8rem 5rem 8rem;
+  z-index: 5;
+  display: flex;
+  gap: 3rem;
+}
+
+.userFilters {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5rem;
+  align-items: center;
+}
+
+.selectContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.searchTitle,
+.selectTitle {
+  font-size: 2rem;
+  display: flex;
+  width: 100%;
+}
+
+.selectTitle {
+  gap: 1rem;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 1.6rem;
+}
+
+.searchValue {
+  font-weight: 600;
+}
+
+.deleteSearchValue {
+  font-size: 2rem;
+  margin: 0 1rem;
+}
+
+.products {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  justify-content: space-between;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  height: 100%;
+}
+
+.filtersContainer {
+  width: 30%;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 4rem;
+  align-items: center;
+  font-size: 1.6rem;
+}
+
+.pagination button {
+  font-size: 1.6rem;
+}
+
+.orderContainer {
+  width: 23.3rem;
+}

@@ -1,0 +1,123 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.6rem;
+  width: 100%;
+  gap: 0.8rem;
+}
+
+.noLabel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 45.2rem;
+  /* min-width: 30rem; */
+}
+
+.input {
+  height: 2.5rem;
+}
+
+.input,
+.inputFullWidth {
+  border: 0.1rem solid black;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  padding: 0.8rem;
+  padding-left: 2rem;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.input:focus,
+.inputFullWidth:focus {
+  border-color: blue;
+  box-shadow: 0 0 0 0.2rem blue;
+  animation: input-border-pulse 0.25s;
+}
+
+.input.errorBorder,
+.inputFullWidth.errorBorder {
+  border-color: red;
+}
+
+.inputWithIconFullWidth,
+.inputWithIconLeft,
+.inputWithIconRight {
+  border: 0.1rem solid black;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  padding: 0.8rem;
+  padding-left: 2rem;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.inputWithIconFullWidth:focus,
+.inputWithIconLeft:focus,
+.inputWithIconRight:focus {
+  border-color: blue;
+  box-shadow: 0 0 0 0.2rem blue;
+  animation: input-border-pulse 0.25s;
+}
+
+.inputWithIconFullWidth.errorBorder,
+.inputWithIconLeft.errorBorder,
+.inputWithIconRight.errorBorder {
+  border-color: red;
+}
+
+.inputWithIconLeft {
+  padding-left: 4rem;
+}
+
+.inputWithIconRight {
+  padding-right: 4rem;
+}
+
+.inputFullWidth {
+  width: 100%;
+}
+
+.error {
+  color: red;
+  font-size: 1.4rem;
+  margin-top: 0.8rem;
+}
+
+.inputWrapper {
+  position: relative;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.iconStart {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  cursor: pointer;
+}
+
+.iconEnd {
+  position: absolute;
+  right: 1rem;
+  top: 0.7rem;
+  cursor: pointer;
+}
+
+.labelContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+@keyframes input-border-pulse {
+  0% {
+    box-shadow: 0 0 0 0rem blue;
+  }
+  100% {
+    box-shadow: 0 0 0 0.2rem blue;
+  }
+}

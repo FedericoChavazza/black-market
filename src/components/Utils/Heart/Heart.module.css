@@ -1,0 +1,23 @@
+.heartIcon {
+  stroke: black;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.active {
+  animation: like 0.5s 1;
+  fill: red;
+  stroke: none;
+}
+
+@keyframes like {
+  0% {
+    transform: scale(1);
+  }
+  90% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}

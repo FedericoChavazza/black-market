@@ -1,0 +1,44 @@
+.fedExAdContainer {
+  width: 80%;
+  height: 29.6rem;
+  display: flex;
+  z-index: 5;
+}
+
+.imageContainer {
+  width: 60%;
+  height: 100%;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.infoContainer {
+  width: 40%;
+  background-color: black;
+  height: 100%;
+  padding: 2rem 6rem;
+  box-sizing: border-box;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  border-left: 1px solid white;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.infoContainer h2 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.infoContainer p {
+  font-size: 1.6rem;
+  font-weight: 300;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.infoContainer p p {
+  color: #52c675;
+  margin: 0;
+}

@@ -1,0 +1,74 @@
+.button {
+  border-radius: 0.8rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+  padding: 1.2rem 2.4rem;
+  transition: background-color 0.3s ease-in-out;
+  width: 100%;
+  height: 4.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.button:active {
+  animation: pulse 0.5s ease-in-out;
+}
+
+.button:disabled {
+  color: white;
+  cursor: not-allowed;
+  border: none;
+}
+
+.containedPrimaryButton,
+.noPaddingPrimaryButton {
+  background-color: black;
+  border: none;
+  color: white;
+}
+
+.noPaddingPrimaryButton {
+  padding: 0;
+  font-size: 1.2rem;
+  justify-content: space-around;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.containedPrimaryButton:disabled {
+  background-color: rgb(78, 78, 78);
+}
+
+.containedSecondaryButton {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}
+
+.containedSecondaryButton:disabled {
+  background-color: rgb(227 227 227);
+}
+
+.containedNoneButton {
+  padding: 0;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
