@@ -45,7 +45,11 @@ const NavBar = () => {
           </div>
         </div>
         <div className={styles.userOptions}>
-          <Button variant="no-padding" className={styles.shoppingCart}>
+          <Button
+            variant="no-padding"
+            className={styles.shoppingCart}
+            onClick={() => push("/dashboard/shopping-cart")}
+          >
             Shopping Cart
             <FaShoppingCart color="white" fill="white" />
           </Button>

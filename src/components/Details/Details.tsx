@@ -14,7 +14,7 @@ import Input from "../Utils/Input/Input";
 import React, { useEffect, useState } from "react";
 
 const ProductDetails = ({ id }: { id: string }) => {
-  const { product, addProductToCart, addQuantityToProduct } = useProducts();
+  const { product, addProductToCart } = useProducts();
 
   const { user, setExtendedUser } = useAuth();
   const [availability, setAvailability] = useState({
@@ -28,8 +28,6 @@ const ProductDetails = ({ id }: { id: string }) => {
 
   useEffect(() => {
     if (product) {
-      console.log("entre");
-
       setAvailability({
         ...availability,
         message: `Availability: ${product.availability} items`,
@@ -59,34 +57,26 @@ const ProductDetails = ({ id }: { id: string }) => {
 
   const imagesToShow = product?.image.slice(1);
   const remainingCount = product && product?.image.length - 3;
-  const checkNoProducts = product && product?.availability < availability.value;
 
   const handleAddToCart = async () => {
     if (user && product && !displayQuantityMessage(availability.value).error) {
-      await addQuantityToProduct(
-        availability.value,
-        product.availability - availability.value,
-        product.id
-      ).then(() => {
-        if (checkNoProducts) {
-        }
-        try {
-          setAvailability({
-            ...availability,
-            message: `Availability: ${
-              product.availability - availability.value
-            } items`,
-          });
-          addProductToCart(user.uid, product).then((response) =>
-            console.log(response)
-          );
-        } catch {
-          console.log("product could not be loaded");
-        }
+      const buildedProduct = {
+        ...product,
+        quantity: availability.value,
+      };
+
+      setAvailability({
+        ...availability,
+        message: `Availability: ${product.availability} items`,
       });
 
+      console.log(availability.value);
+      addProductToCart(user.uid, product, availability.value).then((response) =>
+        console.log(response)
+      );
+
       setExtendedUser((prev) =>
-        prev ? { ...prev, cart: [...prev.cart, product] } : null
+        prev ? { ...prev, cart: [...prev.cart, buildedProduct] } : null
       );
     } else {
       setAvailability({
@@ -149,7 +139,7 @@ const ProductDetails = ({ id }: { id: string }) => {
                 width={500}
                 height={300}
               />
-              <Heart productId={id} className={styles.heart} />
+              <Heart product={product} className={styles.heart} />
             </div>
             <div className={styles.littleImagesContainer}>
               {imagesToShow?.map((image, index) =>

@@ -4,23 +4,28 @@ import { FaHeart } from "react-icons/fa";
 import { doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
 import { db } from "@/services/firebase";
 import { useAuth } from "@/context/AuthContext";
+import { Products } from "@/interfaces";
 
 interface HeartProps {
-  productId: string;
+  product: Products;
   className?: string;
 }
 
-const Heart = ({ productId, className }: HeartProps) => {
-  const { user } = useAuth();
+const Heart = ({ product, className }: HeartProps) => {
+  const { user, setExtendedUser } = useAuth();
   const [isActive, setIsActive] = useState(false);
   const userId = user?.uid;
   const userRef = userId ? doc(db, "users", userId) : null;
 
   useEffect(() => {
     if (user?.likedProducts) {
-      setIsActive(user.likedProducts.includes(productId));
+      setIsActive(
+        !!user.likedProducts.find(
+          (likedProduct) => likedProduct.id === product.id
+        )
+      );
     }
-  }, [user, productId]);
+  }, [user, product.id]);
 
   const handleClick = async (
     event: React.MouseEvent<SVGElement, MouseEvent>
@@ -29,13 +34,28 @@ const Heart = ({ productId, className }: HeartProps) => {
     if (userRef) {
       if (isActive) {
         setIsActive(false);
+        setExtendedUser((prev) =>
+          prev
+            ? {
+                ...prev,
+                likedProducts: prev.likedProducts.filter(
+                  (lp) => lp.id !== product.id
+                ),
+              }
+            : null
+        );
         await updateDoc(userRef, {
-          likedProducts: arrayRemove(productId),
+          likedProducts: arrayRemove(product),
         });
       } else {
         setIsActive(true);
+        setExtendedUser((prev) =>
+          prev
+            ? { ...prev, likedProducts: [...prev.likedProducts, product] }
+            : null
+        );
         await updateDoc(userRef, {
-          likedProducts: arrayUnion(productId),
+          likedProducts: arrayUnion(product),
         });
       }
     }

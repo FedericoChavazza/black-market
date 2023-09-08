@@ -21,7 +21,9 @@ const Dashboard = () => {
               return <Card key={product.id} product={product} />;
             })}
           </div>
-          <Link href="/dashboard/products">See all</Link>
+          <Link className={styles.products} href="/dashboard/products">
+            See all
+          </Link>
         </>
       ) : (
         <div className={styles.spinnerContainer}>

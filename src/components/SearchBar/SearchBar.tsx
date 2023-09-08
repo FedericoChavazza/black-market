@@ -18,10 +18,6 @@ const SearchBar = () => {
     }
   };
 
-  const date = new Date();
-
-  console.log(date);
-
   return (
     <Input
       className={styles.inputSearch}

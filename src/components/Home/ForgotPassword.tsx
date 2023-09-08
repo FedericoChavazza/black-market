@@ -22,7 +22,7 @@ const ForgotPassword = () => {
       await sendPasswordResetEmail(auth, email, {
         url: "http://localhost:3000/auth/sign-in",
       });
-      console.log("Password reset email sent!");
+
       setMessage("");
     } catch (error) {
       console.error("Error sending password reset email:", error);

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -7,7 +9,7 @@ import { Products, SetterFunction } from "@/interfaces";
 
 interface User {
   uid: string;
-  likedProducts?: string[];
+  likedProducts: Products[];
   boughtProducts?: Products[];
   cart: Products[];
 }
@@ -33,7 +35,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [justSignedUp, setJustSignedUp] = useState(false);
   const { push } = useRouter();
 
-  const authenticatedRoutes = ["/dashboard", "/dashboard/:id"]; // Add more routes as needed
+  const authenticatedRoutes = ["/dashboard", "/dashboard/:id"];
 
   const isAuthRoute = (): boolean => {
     const authRoutes = [

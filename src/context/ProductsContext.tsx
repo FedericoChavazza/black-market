@@ -12,6 +12,7 @@ import {
 import { db } from "@/services/firebase";
 import { Products } from "@/interfaces";
 import { useFilters } from "./FiltersContext";
+import { useAuth } from "./AuthContext";
 
 type ProductsContextType = {
   products: Products[];
@@ -20,13 +21,11 @@ type ProductsContextType = {
   getProductById: (id: string) => Promise<void>;
   addProductToCart: (
     userId: string | undefined,
-    product: Products
+    product: Products,
+    quantity: number
   ) => Promise<void>;
-  addQuantityToProduct: (
-    quantity: number,
-    availability: number,
-    id: string
-  ) => Promise<void>;
+  removeProductFromCart: (userId: string, productId: string) => Promise<void>;
+  refreshCartProducts: (userId: string) => Promise<void>;
 };
 
 const ProductsContext = createContext<ProductsContextType | undefined>(
@@ -38,6 +37,8 @@ export const ProductsProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
+  const { setExtendedUser } = useAuth();
+
   const { savedFilters } = useFilters();
   const [products, setProducts] = useState<Products[]>([]);
   const [loadingProducts, setLoadingProducts] = useState(true);
@@ -99,27 +100,48 @@ export const ProductsProvider = ({
 
   const addProductToCart = async (
     userId: string | undefined,
-    product: Products
+    product: Products,
+    quantity: number
   ) => {
     if (userId) {
       const userRef = doc(db, "users", userId);
       await updateDoc(userRef, {
-        cart: arrayUnion(product),
+        cart: arrayUnion({ ...product, quantity }),
       });
     }
   };
 
-  const addQuantityToProduct = async (
-    quantity: number,
-    availability: number,
-    id: string
+  const removeProductFromCart = async (
+    userId: string | undefined,
+    productId: string
   ) => {
-    const productRef = doc(db, "products", id);
+    if (userId) {
+      const userRef = doc(db, "users", userId);
+      const userSnapshot = await getDoc(userRef);
+      const user = userSnapshot.data();
+      const updatedCart = user?.cart.filter(
+        (item: Products) => item.id !== productId
+      );
+      await updateDoc(userRef, { cart: updatedCart });
+    }
+  };
 
-    await updateDoc(productRef, {
-      quantity: quantity,
-      availability: availability,
-    });
+  const refreshCartProducts = async (userId: string) => {
+    const userRef = doc(db, "users", userId);
+    const userSnapshot = await getDoc(userRef);
+    if (userSnapshot.exists()) {
+      const userData = userSnapshot.data();
+      const cart = userData.cart || [];
+      setExtendedUser((prev) => {
+        if (prev) {
+          return {
+            ...prev,
+            cart,
+          };
+        }
+        return null;
+      });
+    }
   };
 
   return (
@@ -130,7 +152,8 @@ export const ProductsProvider = ({
         product,
         getProductById,
         addProductToCart,
-        addQuantityToProduct,
+        removeProductFromCart,
+        refreshCartProducts,
       }}
     >
       {children}

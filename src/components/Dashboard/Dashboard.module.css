@@ -27,3 +27,11 @@
   gap: 2rem;
   flex-wrap: wrap;
 }
+
+.products {
+  font-size: 1.6rem;
+  color: #076ce0;
+  outline: none;
+  text-decoration: none;
+  font-weight: 600;
+}

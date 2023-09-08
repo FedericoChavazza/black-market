@@ -82,8 +82,6 @@ const AllProducts = () => {
       .sort(getSortFunction);
   }, [selectedOptionOrder, searchValue, currentProducts, getSortFunction]);
 
-  console.log(memoCurrentProducts);
-
   return (
     <div className={styles.productsContainer}>
       <div className={styles.filtersContainer}>

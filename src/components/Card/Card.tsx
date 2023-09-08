@@ -36,7 +36,7 @@ const Card = ({ product }: { product: Products }) => {
           </div>
           <div>
             <h3>{product.name}</h3>
-            <Heart productId={product.id} />
+            <Heart product={product} />
           </div>
         </div>
       </Button>
